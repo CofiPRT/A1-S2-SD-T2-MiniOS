@@ -1,0 +1,39 @@
+533
+add 2576 725413 118
+add 2720 852267 33
+add 1620 107133 70
+get 3
+print waiting
+run 408811
+print finished
+run 83148
+push 3 1758725740
+push 3 1471584222
+add 1452 725413 118
+add 524 852267 33
+get 4
+get 1
+run 64493
+print waiting
+print finished
+add 2416 725413 118
+add 3132 852267 33
+print stack 6
+pop 6
+pop 3
+print stack 6
+run 265434
+print waiting
+print waiting
+push 6 1758725740
+push 3 1471584222
+get 6
+print stack 6
+run 2132
+print waiting
+print finished
+pop 6
+pop 3
+print stack 6
+run 60229
+finish

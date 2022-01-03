@@ -1,0 +1,88 @@
+Process created successfully: PID: 1, Memory starts at 0x0.
+Process 1 is running (remaining_time: 725274).
+Waiting queue:
+[]
+Finished queue:
+[]
+Process created successfully: PID: 2, Memory starts at 0xa10.
+Process created successfully: PID: 3, Memory starts at 0x1630.
+Process 3 is waiting (remaining_time: 852147).
+Process 2 is waiting (remaining_time: 725274).
+Waiting queue:
+[(2: priority = 118, remaining_time = 725274),
+(3: priority = 33, remaining_time = 852147)]
+Finished queue:
+[]
+Process 3 is waiting (remaining_time: 852147).
+Process 2 is waiting (remaining_time: 665334).
+Waiting queue:
+[(2: priority = 118, remaining_time = 641358),
+(3: priority = 33, remaining_time = 852147)]
+Finished queue:
+[]
+Process created successfully: PID: 4, Memory starts at 0x1ab4.
+Process created successfully: PID: 5, Memory starts at 0x2060.
+Empty stack PID 4.
+Empty stack PID 4.
+Empty stack PID 4.
+Process created successfully: PID: 6, Memory starts at 0x226c.
+Process created successfully: PID: 7, Memory starts at 0x2bdc.
+Process 6 is waiting (remaining_time: 725274).
+Process 3 is waiting (remaining_time: 852147).
+Waiting queue:
+[(2: priority = 118, remaining_time = 556443),
+(4: priority = 118, remaining_time = 725274),
+(6: priority = 118, remaining_time = 725274),
+(3: priority = 33, remaining_time = 852147),
+(5: priority = 33, remaining_time = 852147),
+(7: priority = 33, remaining_time = 852147)]
+Finished queue:
+[]
+Process created successfully: PID: 1, Memory starts at 0x3818.
+Process created successfully: PID: 8, Memory starts at 0x0.
+PID 9 not found.
+Process created successfully: PID: 9, Memory starts at 0x43f0.
+Process created successfully: PID: 10, Memory starts at 0x4b04.
+Empty stack PID 7.
+Empty stack PID 7.
+Finished queue:
+[(1: priority = 118, executed_time = 725274),
+(2: priority = 118, executed_time = 725274)]
+Waiting queue:
+[(4: priority = 118, remaining_time = 176823),
+(6: priority = 118, remaining_time = 725274),
+(9: priority = 118, remaining_time = 725274),
+(3: priority = 33, remaining_time = 852147),
+(5: priority = 33, remaining_time = 852147),
+(7: priority = 33, remaining_time = 852147),
+(8: priority = 33, remaining_time = 852147),
+(10: priority = 33, remaining_time = 852147)]
+Empty stack PID 7.
+Waiting queue:
+[(6: priority = 118, remaining_time = 225774),
+(3: priority = 33, remaining_time = 852147),
+(5: priority = 33, remaining_time = 852147),
+(7: priority = 33, remaining_time = 852147),
+(8: priority = 33, remaining_time = 852147),
+(10: priority = 33, remaining_time = 852147)]
+Process 7 is waiting (remaining_time: 852147).
+Finished queue:
+[(1: priority = 118, executed_time = 725274),
+(2: priority = 118, executed_time = 725274),
+(4: priority = 118, executed_time = 725274),
+(1: priority = 118, executed_time = 725274)]
+Finished queue:
+[(1: priority = 118, executed_time = 725274),
+(2: priority = 118, executed_time = 725274),
+(4: priority = 118, executed_time = 725274),
+(1: priority = 118, executed_time = 725274)]
+Stack of PID 7: 1758725740.
+Empty stack PID 3.
+Empty stack PID 7.
+Finished queue:
+[(1: priority = 118, executed_time = 725274),
+(2: priority = 118, executed_time = 725274),
+(4: priority = 118, executed_time = 725274),
+(1: priority = 118, executed_time = 725274),
+(6: priority = 118, executed_time = 725274)]
+Total time: 4064931

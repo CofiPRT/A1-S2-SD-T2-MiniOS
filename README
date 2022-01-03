@@ -1,0 +1,338 @@
+--- STRUCTURI DE DATE ---
+---- TEMA 2 - MiniOS ----
+
+Cuprins:
+
+	0. Legenda..........................................Linia 22
+	1. Biblioteci si define-uri.........................Linia 29
+	2. Structuri........................................Linia 45
+	3. Modularizare
+		3.1. Fisierul "main_header.h"...................Linia 75
+		3.2. Fisierul "custom_functions.c"..............Linia 82
+		3.3. Fisierul "init_free_functions.c"...........Linia 105
+		3.4. Fisierul "primary_functions.c".............Linia 133
+		3.5. Fisierul "secondary_functions.c"...........Linia 201
+		3.6. Fisierul "support_functions.c".............Linia 278
+		3.7. Fisierul "source.c"........................Linia 321
+	4.. Alte detalii....................................Linia 336
+
+--- ---------- ---
+--- 0. Legenda ---
+--- ---------- ---
+	- In acest README, o referinta  "(Linia #)" se refera strict la
+	linia # a acestui fisier README, nu a altui fisier.
+
+--- --------------------------- ---
+--- 1. Biblioteci si define-uri ---
+--- --------------------------- ---
+
+Folosesc:
+	<stdio.h> pentru familiile de functii 'print' si 'scan'
+	<stdlib.h> pentru functiile 'malloc' si 'free'
+	<string.h> pentru manipularea sirurilor de caractere
+
+	- MAXCHARS 1000 - pentru un string cu rol de buffer in cadrul implementarii
+		(Linia 330)
+	- MAXFUNCTIONS 9 - numarul de functii principale (cele din enuntul temei)
+	- MAXMEMORY 3145728 - valoarea de 3MiB in Bytes
+	- MAXINT 32767 - PID-ul maxim al unui proces
+	- MAXEXEC 10000000 - timpul de executie maxim al unui proces
+
+--- ------------ ---
+--- 2. Structuri ---
+--- ------------ ---
+
+node:
+	- structura ce serveste la implementarea listelor generice
+
+queue:
+	- structura coada, ce salveaza nodul de inceput si cel de sfarsit
+
+process:
+	- structura cu toate informatiile ce definesc un proces
+	- sunt prezente define-uri pentru a usura cast-ul informatiei dintr-un nod
+	la acest tip
+
+process_mem:
+	- structura folosita pentru gestionarea memoriei, ce memoreaza doar
+	informatiile absolut necesare pentru acest modul
+	- sunt prezente define-uri pentru a usura cast-ul informatiei dintr-un nod
+	la acest tip
+
+function_map:
+	- structura ce usureaza "map-area" functiilor la stringurile
+	corespunzatoare (Linia 324)
+
+main_params:
+	- structura ce are unicul scop de a usura transmiterea parametrilor catre
+	functii, acestea fiind apelate cu o variabila de acest tip
+
+--- ----------------------------- ---
+--- 3.1. Fisierul "main_header.h" ---
+--- ----------------------------- ---
+
+Acest fisier contine structurile antepuse si prototipurile tuturor functiilor
+ce urmeaza a fi descrise
+
+--- ---------------------------------- ---
+--- 3.2. Fisierul "custom_functions.c" ---
+--- ---------------------------------- ---
+
+Acest fisier contine functii "custom" precum 'malloc_c' si 'fopen_c', ce sunt,
+in esenta, functiile 'malloc' si 'fopen' testate.
+
+Functia 'push'
+	- Primeste un nod ce este folosit drept varf de stiva si adauga alt nod
+	inaintea acestuia
+
+Functia 'pop'
+	- Returneaza primul nod al unei liste (folosita, in principiu, drept stiva)
+	si il scoate din aceasta (actualizand-o)
+
+Functia 'enqueue'
+	- Primeste o coada si un nod pe care il adauga corespunzator la sfarsitul
+	ei
+
+Functia 'enqueue'
+	- Returneaza nodul de la inceputul unei cozi si il scoate din aceasta,
+	actualizand-o
+
+--- ------------------------------------- ---
+--- 3.3. Fisierul "init_free_functions.c" ---
+--- ------------------------------------- ---
+
+Contine functii ce initializeaza si/sau aloca diferite structuri, precum si
+functii ce elibereaza memoria acestora.
+
+Functia 'free_queue'
+	- Fiind in principiu o coada de procese, fiecare proces din fiecare nod
+	este eliberat prin functia 'free_process'
+
+Functia 'free_process'
+	- Se elibereaza stack-ul aferent procesului precum si procesul
+
+Functia 'init_params'
+	- Pregateste codul pentru rulare, deschizand fisierele aferente si
+	initializand elemente necesare precum buffer-ul, cozile de asteptare si
+	de terminare, "memoria" sistemului imaginar si nodul ce salveaza procesul
+	'running'
+
+Functia 'free_params'
+	- Elibereaza elementele antepuse in mod corespunzator, folosind functia
+	aferenta fiecarui tip (precum 'free_process', 'free_queue' etc.)
+
+Functia 'free_memory'
+	- Fiind o lista generica de elemente 'process_mem', se elibereaza acestea
+	din campul 'data' al nodului, precum si nodul
+
+--- ----------------------------------- ---
+--- 3.4. Fisierul "primary_functions.c" ---
+--- ----------------------------------- ---
+
+Functiile din acest fisier isi procura, la inceputul fiecareia, parametrii
+necesari din fisierul de input.
+
+Functia 'add_process'
+	- Se aloca un nou proces, cu PID-ul returnat de 'find_PID' (Linia 206)
+	- Se apeleaza functia 'find_memory' (Linia 210) pentru a obtine o adresa
+	de inceput de memorie de la modulul de gestionare a acesteia. In cazul in
+	care prima incercare esueaza, se face o defragmentare a acesteia prin
+	'defrag' (Linia 293)
+	- Daca nu s-a putut aloca memorie pentru proces, se afiseaza mesajul
+	aferent
+	- Daca alocarea memoriei a fost un succes, procesul este gata sa intre in
+	sistem, cu starea 'running' daca sistemul este gol, sau 'waiting' daca
+	un proces este deja in starea running.
+	- Succesul este oferit de un mesaj afisat in fisierul de output
+
+Functia 'process_status'
+	- Functia gaseste detalii despre toate procesele din sistem cu un anumit
+	PID apeland functia 'find_process' cu niste coduri (Linia 239) aferente.
+	- In cazul in care 'find_process' nu a putut gasi vreun proces, se afiseaza
+	mesajul de esec
+
+Functia 'push_to_process'
+	- Functia aloca un nou nod cu informatia primita drept parametru ce il
+	introduce in stiva aferenta procesului returnat de 'find_process'.
+	- Se cauta doar procesele in starea running sau waiting
+	- Daca 'find_process' nu a returnat niciun proces, se afiseaza mesajul de
+	esec.
+
+Functia 'pop_from_process'
+	- Functia scoate informatia din varful stivei procesului returnat de
+	'find_process' si o elibereaza
+	- Se cauta doar procesele in starea running sau waiting
+	- Daca 'find_process' nu a returnat niciun proces, se afiseaza mesajul de
+	esec.
+
+Functia 'print_stack'
+	- Functia afiseaza toate informatiile salvate in stiva unui proces
+	- Daca stiva este goala, se afiseaza mesajul aferent
+	- Se rastoarna stiva intr-una auxiliara pentru a citi elementele de la baza
+	stivei initiale
+	- Prin functii pop si push, la fiecare pas, se afiseaza informatia din nodul
+	cu care se lucreaza la pasul respectiv, urmand sa fie reintrodus in stiva
+	initiala
+	- Daca 'find_process' nu a returnat niciun proces, se afiseaza mesajul de
+	esec.
+
+Functia 'print_waiting'
+	- Se scoate cate un nod din coada de asteptare, afisand informatii despre
+	el, dupa care se introduce intr-o coada auxiliara
+	- Fiecare nod din coada auxiliara este reintrodus in coada initiala,
+	astfel pastrandu-se aceasta din urma
+
+Functia 'print_finished'
+	- Similara functiei 'print_waiting', afisand informatii din coada de procese
+	terminate in schimb
+
+Functia 'run_jobs'
+	- Simplu apel al functiei 'do_jobs' (Linia 257)
+
+Functia 'finish_jobs'
+	- Se apeleaza 'do_jobs' pana cand nu mai exista niciun proces in starea
+	running, calculandu-se timpul necesar executiei la fiecare apel.
+
+--- --------------------------------- ---
+--- 3.5. Fisierul "secondary_functions.c" ---
+--- --------------------------------- ---
+
+Functii secundare ce sunt apelate de cele principale.
+
+Functia 'find_PID'
+	- Functia gaseste cel mai mic PID dintre procesele din modulul de gestionare
+	a memoriei, iterand prin fiecare nod din aceasta lista.
+
+Functia 'find_memory'
+	- Functia gaseste cel mai mic inceput de memorie posibil, bazandu-se pe
+	lista de procese din modulul de gestionare a memoriei
+	- Incepandu-se de la memory_start = 0, daca suma 'memory_start' +
+	'memory_size' nu se suprapune peste un interval de memorie al unui proces,
+	inseamna ca acea memorie este libera si poate fi alocata
+	- In caz contrar, memory_start ia valoarea imediat urmatoare sfarsitului
+	de memorie al procesului cu care s-a suprapus, testandu-se din nou
+	- Daca s-a ajuns la ultimul proces, se testeaza daca este memorie suficienta
+	dupa acesta si pana la sfarsitul memoriei maxime admise. In caz contrar,
+	se returneaza '-1', fiind folosita corespunzator de functia 'add_process'
+	(Linia 139)
+	- Daca s-a gasit un loc pentru memorie, se creeaza un nou nod pentru a fi
+	inserat in aceasta, acoperindu-se cazurile in care memoria este goala,
+	daca trebuie sa se insereze la inceputul memoriei sau daca se insereaza
+	oriunde altundeva in memorie
+	- Se atribuie valorile necesare pentru acest nod, precum PID, memory_start
+	si memory_end.
+
+Functia 'add_to_waiting'
+	- Se extrage cate un nod din lista de asteptare si se compara cu nodul
+	ce trebuie introdus in aceasta, prin functia 'enqueue_ordered' (Linia 312)
+	- Daca se indeplinesc conditiile de ordonare, se insereaza nodul intr-o
+	lista auxiliara, dupa care toate nodurile din lista principala il urmeaza
+	- Daca nu se indeplinesc conditiile de ordonare, se insereaza doar nodul
+	extras din lista principala
+	- La final, se extrage din lista auxiliara si se introduce inapoi in lista
+	principala, astfel actualizand-o cu noul nod
+
+Functia 'find_process'
+	- Functionand similar codurilor de permisiune din sistemul Linux (r, w, x),
+	functia cauta un anume PID printre procesele cu starea corespunzatoare
+	unui anumit cod
+	- Astfel: 4 pentru running, 2 pentru waiting, 1 pentru finished. Aceste
+	coduri se pot aduna pentru a cauta procesul in mai multe stari (de exemplu,
+	codul 6 = 4 + 2 va cauta procese in starea running si waiting).
+	- Pentru procesul din starea running se verifica daca PID-ul acestuia
+	corespunde cu PID-ul cautat
+	- Pentru procesele din starea waitng, se apeleaza functia 'find_in_queue'
+	asupra cozii de asteptare
+	- Pentru procesele din starea finished, se apeleaza functia 'find_in_queue'
+	asupra cozii de procese terminate, mentionandu-se prin parametrul '1'
+	(Linia 284) ca s-a transmis coada de procese terminate
+	- Daca s-a gasit cel putin un proces printre toate aceste coduri, se
+	returneaza
+	- In caz contrar, se returneaza NULL
+
+Functia 'do_jobs'
+	- Primind ca argument numarul de milisecunde ce trebuiesc rulate,
+	se decrementeaza timpul 'remaining' din procesul de rulare (daca exista)
+	alaturi de decrementarea argumentului si incrementarea numarului
+	'total_time', ce salveaza cate milisecunde din argumentul primit au fost
+	rulate
+	- La fiecare pas, se testeaza daca procesul mai are de rulat
+	('remaining_time'). Daca acesta si-a terminat executia, i se elibereaza
+	memoria si este inserat in coada de procese terminate. Daca in coada
+	de procese in asteptare exista cel putin un proces, acesta este luat
+	pentru rulare. In caz contrar, nu se ruleaza niciun proces, astfel
+	terminandu-se loop-ul while.
+	- In continuare se testeaza daca procesul a rulat pentru un numar de
+	milisecunde ce este multiplu de cuanta T (prin diferenta dintre
+	timpul de executie initial si cel ramas). Daca acesta si-a atins cuanta,
+	si exista procese in coada de asteptare, acesta este trimis acolo si este
+	extras un proces din coada pentru a fi rulat. Daca nu exista procese in
+	coada de asteptare, procesul curent continua sa ruleze
+	- Se returneaza 'total_time'
+
+--- ----------------------------------- ---
+--- 3.6. Fisierul 'support_functions.c' ---
+--- ----------------------------------- ---
+
+Functii ce ajuta implementarea celor secundare, acestea din urma bazandu-se
+pe ele
+
+Functia 'find_in_queue'
+	- Functia primeste o coada si un PID si extrage cate un element din aceasta
+	comparandu-i PID-ul. In caz afirmativ, se salveaza un pointer catre acest
+	proces gasit. Daca s-a primit ca parametru coada finished, actiune marcata
+	de 'is_finished', se afiseaza mesajul aferent acestor procese.
+	- In orice caz, procesul este introdus intr-o coada auxiliara
+	- La final, se extrage din coada auxiliara si se reintroduce in coada
+	principala, astfel aceasta ramanand nemodificata
+
+Functia 'defrag'
+	- Functia cauta un nod pe care sa il scoata din lista 'memory' si sa-l
+	adauge la finalul unei liste auxiliare
+	- Se cauta nodul cu cel mai mic PID in informatia stocata de acesta.
+	- Se acopera cazurile in care nodul gasit este la inceputul listei 'memory'
+	sau altundeva si trebuie adaugat la inceputul listei auxiliare sau altundeva
+	- Cu fiecare mutare, se actualizeaza valorile 'memory_start' si 'memory_end'
+	din nodul mutat, in functie de celelalte noduri existente in lista
+	auxiliara
+	- La final, adresa listei initiale se actualizeaza la primul nod din lista
+	auxiliara, astfel actualizandu-se.
+
+Functia 'erase_from_memory'
+	- Functia cauta in memorie nodul al carui element 'memory_start' coincide
+	cu cel primit ca parametru
+	- Se elimina nodul din lista, acoperindu-se cazurile in care nodul se afla
+	la inceputul listei sau oriunde altundeva
+	- Se elibereza memoria ocupata de acesta
+
+Functia 'enqueue_ordered'
+	- Functia primeste o coada si doua noduri, comparandu-le pe baza criteriilor
+	din enunt. Astfel daca nodul 'new_node' trebuie inserat inaintea lui
+	'curr_node', se introduc in aceasta ordine in lista. In caz contrar, se
+	insereaza doar nodul 'curr_node'
+	- Daca s-a introdus 'new_node', se seteaza o variabila 'done' la 1,
+	pentru a fi folosita de 'add_to_waiting'
+
+--- ------------------------ ---
+--- 3.7. Fisierul "source.c" ---
+--- ------------------------ ---
+
+Functia 'find_function'
+	- Mapeaza functiile la string-urile aferente lor
+	- Din buffer-ul primit din main se extrage numele comenzii
+	- Se compara numele comenzii cu toate string-urile din map
+	- Cand se gaseste una, se apeleaza functia corespunzatoare string-ului.
+
+Functia 'main'
+	- Se apeleaza 'init_params' pentru a pregati codul pentru rulare,
+	se extrage cate o linie din fisierul de input (introducandu-se in buffer),
+	dupa care se elibereaza tot ce a fost initializat de 'init_params'.
+
+--- --------------- ---
+--- 4. Alte detalli ---
+--- --------------- ---
+
+Am ales sa salvez majoritatea elementelor necesare rularii precum fisiere
+de input si output, cozi si liste intr-o singura variabila 'params' pentru a
+usura transmiterea lor catre functii (in majoritatea functiilor, se transmite
+doar 'params')

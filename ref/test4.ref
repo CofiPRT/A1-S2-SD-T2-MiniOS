@@ -1,0 +1,381 @@
+Process created successfully: PID: 1, Memory starts at 0x0.
+Process created successfully: PID: 2, Memory starts at 0xb5fb0.
+Process created successfully: PID: 3, Memory starts at 0x20731c.
+Cannot reserve memory for PID 4.
+Cannot reserve memory for PID 4.
+Process created successfully: PID: 4, Memory starts at 0x255d08.
+Process created successfully: PID: 5, Memory starts at 0x2ac91c.
+Cannot reserve memory for PID 6.
+Process created successfully: PID: 6, Memory starts at 0x2d361c.
+Process created successfully: PID: 7, Memory starts at 0x2f1364.
+Cannot reserve memory for PID 8.
+Process created successfully: PID: 8, Memory starts at 0x2fa9a4.
+Cannot reserve memory for PID 9.
+Process 3 is waiting (remaining_time: 776935).
+Process 6 is waiting (remaining_time: 453668).
+Process 1 is running (remaining_time: 725741).
+Process 12 not found.
+Process 5 is waiting (remaining_time: 678959).
+Process 3 is waiting (remaining_time: 776935).
+Process 8 is waiting (remaining_time: 166862).
+Process 13 not found.
+Process 1 is running (remaining_time: 725741).
+Process 2 is waiting (remaining_time: 584223).
+Process 1 is running (remaining_time: 725741).
+Process 2 is waiting (remaining_time: 584223).
+Process 13 not found.
+Waiting queue:
+[(4: priority = 108, remaining_time = 602151),
+(5: priority = 86, remaining_time = 678959),
+(7: priority = 66, remaining_time = 599154),
+(6: priority = 40, remaining_time = 453668),
+(2: priority = 40, remaining_time = 584223),
+(3: priority = 40, remaining_time = 776935),
+(8: priority = 13, remaining_time = 166862)]
+Finished queue:
+[]
+PID 12 not found.
+PID 8 not found.
+PID 2 not found.
+PID 13 not found.
+PID 6 not found.
+PID 4 not found.
+PID 12 not found.
+PID 2 not found.
+PID 5 not found.
+PID 6 not found.
+PID 8 not found.
+PID 9 not found.
+PID 5 not found.
+PID 10 not found.
+Process created successfully: PID: 1, Memory starts at 0x0.
+Process created successfully: PID: 2, Memory starts at 0x11c9c.
+Process 9 not found.
+Process 11 not found.
+Waiting queue:
+[(1: priority = 118, remaining_time = 725741),
+(2: priority = 40, remaining_time = 584223)]
+Process 9 not found.
+Process 11 not found.
+Process 11 not found.
+Process 3 is finished.
+Process 13 not found.
+Waiting queue:
+[(2: priority = 40, remaining_time = 432675)]
+Finished queue:
+[(4: priority = 108, executed_time = 602151),
+(1: priority = 118, executed_time = 725741),
+(5: priority = 86, executed_time = 678959),
+(7: priority = 66, executed_time = 599154),
+(6: priority = 40, executed_time = 453668),
+(2: priority = 40, executed_time = 584223),
+(8: priority = 13, executed_time = 166862),
+(3: priority = 40, executed_time = 776935),
+(1: priority = 118, executed_time = 725741),
+(2: priority = 40, executed_time = 584223)]
+Process created successfully: PID: 1, Memory starts at 0x0.
+Process created successfully: PID: 2, Memory starts at 0x7fc0.
+Process created successfully: PID: 3, Memory starts at 0xc404.
+Process created successfully: PID: 4, Memory starts at 0xd46c.
+Process created successfully: PID: 5, Memory starts at 0xe368.
+Process created successfully: PID: 6, Memory starts at 0xe544.
+Process created successfully: PID: 7, Memory starts at 0xf79c.
+Process created successfully: PID: 8, Memory starts at 0x10c28.
+Process created successfully: PID: 9, Memory starts at 0x11970.
+Process created successfully: PID: 10, Memory starts at 0x11fe8.
+Process created successfully: PID: 11, Memory starts at 0x12234.
+Process created successfully: PID: 12, Memory starts at 0x123dc.
+Process created successfully: PID: 13, Memory starts at 0x12494.
+Process created successfully: PID: 14, Memory starts at 0x124c4.
+Process created successfully: PID: 15, Memory starts at 0x124fc.
+PID 24 not found.
+PID 24 not found.
+Empty stack PID 11.
+PID 24 not found.
+Finished queue:
+[(4: priority = 108, executed_time = 602151),
+(1: priority = 118, executed_time = 725741),
+(5: priority = 86, executed_time = 678959),
+(7: priority = 66, executed_time = 599154),
+(6: priority = 40, executed_time = 453668),
+(2: priority = 40, executed_time = 584223),
+(8: priority = 13, executed_time = 166862),
+(3: priority = 40, executed_time = 776935),
+(1: priority = 118, executed_time = 725741),
+(2: priority = 40, executed_time = 584223),
+(1: priority = 118, executed_time = 725741),
+(14: priority = 121, executed_time = 882548)]
+Waiting queue:
+[(7: priority = 86, remaining_time = 284759),
+(8: priority = 75, remaining_time = 593746),
+(10: priority = 66, remaining_time = 599154),
+(15: priority = 52, remaining_time = 488792),
+(13: priority = 51, remaining_time = 258991),
+(11: priority = 47, remaining_time = 600317),
+(9: priority = 40, remaining_time = 453668),
+(2: priority = 40, remaining_time = 584223),
+(3: priority = 40, remaining_time = 776935),
+(4: priority = 32, remaining_time = 394951),
+(5: priority = 30, remaining_time = 813436),
+(12: priority = 13, remaining_time = 166862)]
+PID 24 not found.
+PID 20 not found.
+PID 25 not found.
+PID 23 not found.
+PID 28 not found.
+PID 19 not found.
+PID 16 not found.
+PID 22 not found.
+PID 16 not found.
+PID 30 not found.
+PID 26 not found.
+PID 16 not found.
+PID 19 not found.
+Process created successfully: PID: 1, Memory starts at 0x0.
+Process created successfully: PID: 14, Memory starts at 0x9c.
+Process 12 is waiting (remaining_time: 166862).
+Process 13 is waiting (remaining_time: 258991).
+Waiting queue:
+[(15: priority = 52, remaining_time = 488792),
+(13: priority = 51, remaining_time = 258991),
+(11: priority = 47, remaining_time = 600317),
+(9: priority = 40, remaining_time = 453668),
+(2: priority = 40, remaining_time = 584223),
+(14: priority = 40, remaining_time = 584223),
+(3: priority = 40, remaining_time = 776935),
+(4: priority = 32, remaining_time = 394951),
+(5: priority = 30, remaining_time = 813436),
+(12: priority = 13, remaining_time = 166862)]
+Finished queue:
+[(4: priority = 108, executed_time = 602151),
+(1: priority = 118, executed_time = 725741),
+(5: priority = 86, executed_time = 678959),
+(7: priority = 66, executed_time = 599154),
+(6: priority = 40, executed_time = 453668),
+(2: priority = 40, executed_time = 584223),
+(8: priority = 13, executed_time = 166862),
+(3: priority = 40, executed_time = 776935),
+(1: priority = 118, executed_time = 725741),
+(2: priority = 40, executed_time = 584223),
+(1: priority = 118, executed_time = 725741),
+(14: priority = 121, executed_time = 882548),
+(6: priority = 108, executed_time = 602151),
+(7: priority = 86, executed_time = 678959),
+(1: priority = 118, executed_time = 725741),
+(8: priority = 75, executed_time = 593746)]
+Process created successfully: PID: 1, Memory starts at 0x0.
+Process created successfully: PID: 6, Memory starts at 0x34.
+Empty stack PID 6.
+PID 23 not found.
+PID 7 not found.
+Process created successfully: PID: 7, Memory starts at 0xe0.
+Process created successfully: PID: 8, Memory starts at 0x128.
+PID 36 not found.
+PID 29 not found.
+Waiting queue:
+[(2: priority = 40, remaining_time = 260979),
+(8: priority = 40, remaining_time = 584223),
+(14: priority = 40, remaining_time = 584223),
+(3: priority = 40, remaining_time = 776935),
+(4: priority = 32, remaining_time = 394951),
+(5: priority = 30, remaining_time = 813436),
+(12: priority = 13, remaining_time = 166862)]
+PID 36 not found.
+Process created successfully: PID: 1, Memory starts at 0x0.
+Process created successfully: PID: 7, Memory starts at 0xc.
+Process created successfully: PID: 9, Memory starts at 0x24.
+Process created successfully: PID: 10, Memory starts at 0x70.
+Process created successfully: PID: 11, Memory starts at 0x2c.
+Process created successfully: PID: 13, Memory starts at 0x80.
+Process created successfully: PID: 15, Memory starts at 0x88.
+Waiting queue:
+[(2: priority = 40, remaining_time = 216303),
+(6: priority = 40, remaining_time = 277623),
+(7: priority = 40, remaining_time = 584223),
+(8: priority = 40, remaining_time = 584223),
+(14: priority = 40, remaining_time = 584223),
+(3: priority = 40, remaining_time = 776935),
+(9: priority = 40, remaining_time = 776935),
+(4: priority = 32, remaining_time = 394951),
+(10: priority = 32, remaining_time = 394951),
+(5: priority = 30, remaining_time = 813436),
+(11: priority = 30, remaining_time = 813436),
+(12: priority = 13, remaining_time = 166862)]
+Finished queue:
+[(4: priority = 108, executed_time = 602151),
+(1: priority = 118, executed_time = 725741),
+(5: priority = 86, executed_time = 678959),
+(7: priority = 66, executed_time = 599154),
+(6: priority = 40, executed_time = 453668),
+(2: priority = 40, executed_time = 584223),
+(8: priority = 13, executed_time = 166862),
+(3: priority = 40, executed_time = 776935),
+(1: priority = 118, executed_time = 725741),
+(2: priority = 40, executed_time = 584223),
+(1: priority = 118, executed_time = 725741),
+(14: priority = 121, executed_time = 882548),
+(6: priority = 108, executed_time = 602151),
+(7: priority = 86, executed_time = 678959),
+(1: priority = 118, executed_time = 725741),
+(8: priority = 75, executed_time = 593746),
+(1: priority = 118, executed_time = 725741),
+(7: priority = 118, executed_time = 725741),
+(10: priority = 66, executed_time = 599154),
+(15: priority = 52, executed_time = 488792),
+(13: priority = 51, executed_time = 258991),
+(11: priority = 47, executed_time = 600317),
+(9: priority = 40, executed_time = 453668),
+(13: priority = 108, executed_time = 602151),
+(1: priority = 118, executed_time = 725741)]
+PID 25 not found.
+PID 19 not found.
+PID 37 not found.
+PID 24 not found.
+PID 33 not found.
+PID 42 not found.
+PID 34 not found.
+PID 16 not found.
+PID 18 not found.
+PID 17 not found.
+PID 19 not found.
+PID 17 not found.
+PID 38 not found.
+PID 21 not found.
+PID 37 not found.
+PID 36 not found.
+PID 22 not found.
+PID 39 not found.
+PID 31 not found.
+PID 22 not found.
+PID 19 not found.
+PID 39 not found.
+PID 16 not found.
+PID 37 not found.
+Process 25 not found.
+Process 27 not found.
+Process 34 not found.
+Process 19 not found.
+Process 39 not found.
+Process 12 is waiting (remaining_time: 166862).
+Process 37 not found.
+Process 39 not found.
+Process 8 is waiting (remaining_time: 584223).
+Process 8 is finished.
+Process 8 is finished.
+Process 10 is waiting (remaining_time: 394951).
+Process 10 is finished.
+Process 20 not found.
+Process 3 is waiting (remaining_time: 776935).
+Process 3 is finished.
+Process 24 not found.
+Process 42 not found.
+Process 36 not found.
+PID 25 not found.
+PID 27 not found.
+PID 34 not found.
+PID 19 not found.
+PID 39 not found.
+Process 25 not found.
+Finished queue:
+[(4: priority = 108, executed_time = 602151),
+(1: priority = 118, executed_time = 725741),
+(5: priority = 86, executed_time = 678959),
+(7: priority = 66, executed_time = 599154),
+(6: priority = 40, executed_time = 453668),
+(2: priority = 40, executed_time = 584223),
+(8: priority = 13, executed_time = 166862),
+(3: priority = 40, executed_time = 776935),
+(1: priority = 118, executed_time = 725741),
+(2: priority = 40, executed_time = 584223),
+(1: priority = 118, executed_time = 725741),
+(14: priority = 121, executed_time = 882548),
+(6: priority = 108, executed_time = 602151),
+(7: priority = 86, executed_time = 678959),
+(1: priority = 118, executed_time = 725741),
+(8: priority = 75, executed_time = 593746),
+(1: priority = 118, executed_time = 725741),
+(7: priority = 118, executed_time = 725741),
+(10: priority = 66, executed_time = 599154),
+(15: priority = 52, executed_time = 488792),
+(13: priority = 51, executed_time = 258991),
+(11: priority = 47, executed_time = 600317),
+(9: priority = 40, executed_time = 453668),
+(13: priority = 108, executed_time = 602151),
+(1: priority = 118, executed_time = 725741)]
+Finished queue:
+[(4: priority = 108, executed_time = 602151),
+(1: priority = 118, executed_time = 725741),
+(5: priority = 86, executed_time = 678959),
+(7: priority = 66, executed_time = 599154),
+(6: priority = 40, executed_time = 453668),
+(2: priority = 40, executed_time = 584223),
+(8: priority = 13, executed_time = 166862),
+(3: priority = 40, executed_time = 776935),
+(1: priority = 118, executed_time = 725741),
+(2: priority = 40, executed_time = 584223),
+(1: priority = 118, executed_time = 725741),
+(14: priority = 121, executed_time = 882548),
+(6: priority = 108, executed_time = 602151),
+(7: priority = 86, executed_time = 678959),
+(1: priority = 118, executed_time = 725741),
+(8: priority = 75, executed_time = 593746),
+(1: priority = 118, executed_time = 725741),
+(7: priority = 118, executed_time = 725741),
+(10: priority = 66, executed_time = 599154),
+(15: priority = 52, executed_time = 488792),
+(13: priority = 51, executed_time = 258991),
+(11: priority = 47, executed_time = 600317),
+(9: priority = 40, executed_time = 453668),
+(13: priority = 108, executed_time = 602151),
+(1: priority = 118, executed_time = 725741)]
+PID 25 not found.
+PID 27 not found.
+PID 34 not found.
+PID 19 not found.
+PID 39 not found.
+Empty stack PID 12.
+PID 25 not found.
+PID 27 not found.
+PID 25 not found.
+PID 27 not found.
+PID 34 not found.
+Waiting queue:
+[(14: priority = 40, remaining_time = 348579),
+(9: priority = 40, remaining_time = 776935),
+(4: priority = 32, remaining_time = 394951),
+(10: priority = 32, remaining_time = 394951),
+(5: priority = 30, remaining_time = 813436),
+(11: priority = 30, remaining_time = 813436),
+(12: priority = 13, remaining_time = 166862)]
+Finished queue:
+[(4: priority = 108, executed_time = 602151),
+(1: priority = 118, executed_time = 725741),
+(5: priority = 86, executed_time = 678959),
+(7: priority = 66, executed_time = 599154),
+(6: priority = 40, executed_time = 453668),
+(2: priority = 40, executed_time = 584223),
+(8: priority = 13, executed_time = 166862),
+(3: priority = 40, executed_time = 776935),
+(1: priority = 118, executed_time = 725741),
+(2: priority = 40, executed_time = 584223),
+(1: priority = 118, executed_time = 725741),
+(14: priority = 121, executed_time = 882548),
+(6: priority = 108, executed_time = 602151),
+(7: priority = 86, executed_time = 678959),
+(1: priority = 118, executed_time = 725741),
+(8: priority = 75, executed_time = 593746),
+(1: priority = 118, executed_time = 725741),
+(7: priority = 118, executed_time = 725741),
+(10: priority = 66, executed_time = 599154),
+(15: priority = 52, executed_time = 488792),
+(13: priority = 51, executed_time = 258991),
+(11: priority = 47, executed_time = 600317),
+(9: priority = 40, executed_time = 453668),
+(13: priority = 108, executed_time = 602151),
+(1: priority = 118, executed_time = 725741),
+(2: priority = 40, executed_time = 584223),
+(6: priority = 40, executed_time = 584223),
+(15: priority = 86, executed_time = 678959),
+(7: priority = 40, executed_time = 584223),
+(8: priority = 40, executed_time = 584223)]
+Total time: 4268424

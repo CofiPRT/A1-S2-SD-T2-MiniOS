@@ -1,0 +1,16 @@
+1000
+add 2576 725000 118
+get 1
+print waiting
+run 26000
+add 3104 725000 118
+run 209000
+print finished
+push 2 1758725740
+push 1 1471584222
+print stack 2
+pop 2
+pop 1
+print stack 2
+run 151000
+finish

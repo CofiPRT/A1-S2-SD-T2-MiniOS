@@ -1,0 +1,28 @@
+900
+add 2576 725400 118
+add 2720 852300 33
+add 1620 107100 70
+get 3
+get 2
+print waiting
+run 409500
+print finished
+add 1452 725400 118
+add 524 852300 33
+add 2592 107100 70
+run 717300
+print waiting
+push 6 1758725740
+push 3 1471584222
+push 2 491776934
+push 1 2018394950
+get 6
+print stack 6
+pop 6
+pop 5
+pop 5
+pop 3
+print stack 6
+print stack 6
+run 163800
+finish

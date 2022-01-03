@@ -1,0 +1,10 @@
+Process created successfully: PID: 1, Memory starts at 0x0.
+Process 1 is running (remaining_time: 725000).
+Waiting queue:
+[]
+Process created successfully: PID: 2, Memory starts at 0xa10.
+Finished queue:
+[]
+Stack of PID 2: 1758725740.
+Empty stack PID 2.
+Total time: 1064000

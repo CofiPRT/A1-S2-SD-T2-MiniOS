@@ -1,0 +1,64 @@
+999
+add 2576 725274 118
+get 1
+print waiting
+run 165834
+print finished
+run 129870
+push 1 1758725740
+push 1 1471584222
+add 3104 725274 118
+add 1156 852147 33
+get 3
+get 2
+print waiting
+print finished
+run 119880
+get 3
+get 2
+run 47952
+print waiting
+print finished
+add 1452 725274 118
+add 524 852147 33
+print stack 4
+pop 4
+pop 1
+print stack 4
+run 169830
+push 4 1758725740
+push 3 1471584222
+add 2416 725274 118
+add 3132 852147 33
+get 6
+get 3
+print waiting
+print finished
+run 957042
+add 3032 725274 118
+add 2128 852147 33
+print stack 9
+add 1812 725274 118
+add 1960 852147 33
+print stack 7
+run 660339
+pop 7
+pop 3
+print finished
+print waiting
+print stack 7
+run 1352646
+print waiting
+push 7 1758725740
+push 10 1471584222
+get 7
+print finished
+print finished
+print stack 7
+run 555444
+pop 7
+pop 3
+print stack 7
+run 388611
+print finished
+finish
